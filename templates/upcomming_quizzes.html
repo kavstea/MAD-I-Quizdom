@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upcomming Quizzes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Orbitron', sans-serif;
+        }
+        body {
+            background-color: #161B33; /* Muted deep blue */
+            color: #DDE3F0; /* Soft off-white */
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        /* Navbar */
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(28, 32, 58, 0.9); /* Darker blue-gray */
+            padding: 15px 25px;
+            box-shadow: 0 2px 12px rgba(173, 216, 230, 0.2); /* Soft light blue */
+            z-index: 1000;
+        }
+    
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    
+        .nav-links a {
+            text-decoration: none;
+            color: #A6C6DB; /* Muted cyan */
+            font-weight: bold;
+            transition: 0.3s;
+        }
+    
+        .nav-links a:hover {
+            color: #BFA6DB; /* Muted lavender */
+            text-shadow: 0 0 8px #BFA6DB;
+        }
+    
+        .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #A6C6DB;
+            margin-right: 15px;
+        }
+    
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    
+        .dashboard-title {
+            text-align: center;
+            color: #A6C6DB;
+            font-size: 2em;
+            text-shadow: 0 0 15px #A6C6DB;
+            margin-bottom: 20px;
+        }
+    
+        /* Search Form */
+        .search-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-input {
+            background-color: rgba(48, 55, 85, 0.7);
+            border: 1px solid rgba(173, 216, 230, 0.2);
+            border-radius: 5px;
+            padding: 8px 35px 8px 10px;
+            color: #A6C6DB;
+        }
+
+        .search-input::placeholder {
+            color: #BFA6DB;
+        }
+
+        .search-button {
+            background-color: #A6C6DB;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            color: #222;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #90B0C6;
+        }
+
+        /* Table Styling */
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(173, 216, 230, 0.2);
+            color: #A6C6DB;
+        }
+
+        th {
+            background-color: rgba(28, 32, 58, 0.9);
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: rgba(48, 55, 85, 0.5);
+        }
+
+        button {
+            background-color: #A6C6DB;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #222;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #90B0C6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(28, 32, 58, 0.9);
+            color: #A6C6DB;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 12px rgba(173, 216, 230, 0.2);
+        }
+        .alert {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <nav class="navigation">
+        <div class="nav-links">
+            <span class="brand">Quizdom</span>
+            <a href="/Upcomming-Quizzes">Quizzes</a>
+            <a href="/Scorecard">Scores</a>
+            <a href="/User-Summary">Summary</a>
+            <a href="/">Logout</a>
+        </div>
+        <div class="nav-right">
+            <form action="{{ url_for('upcomming_quizzes') }}" method="GET" class="search-form">
+                <input type="text" name="search" class="search-input" placeholder="Search quizzes..." value="{{ request.args.get('search', '') }}">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+            <span style="color: #A6C6DB; font-weight: bold; margin-right: 50px">Welcome, {{ session['username'] }}</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="dashboard-title">Upcomming Quizzes</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Remarks</th>
+                    <th>Subject</th>
+                    <th>Chapter</th>
+                    <th>No. of Questions</th>
+                    <th>Date</th>
+                    <th>Duration (in minutes)</th>
+                    <th>Scores/Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for quiz in quizzes %}
+                <tr>
+                    <td>{{ quiz.id }}</td>
+                    <td>{{ quiz.title }}</td>
+                    <td>{{ quiz.remarks }}</td>
+                    <td>{{ quiz.chapter.subject.name }}</td>
+                    <td>{{ quiz.chapter.title }}</td>
+                    <td>{{ quiz.questions|length }}</td>
+                    <td>{{ quiz.date_of_quiz.strftime('%d/%m/%Y') }}</td>
+                    <td>{{ quiz.time_duration }}</td>
+                    <td>
+                        {% set user_scores = quiz.scores | selectattr('user_id', 'equalto', session['user_id']) | list %}
+                        {% if user_scores %}
+                            <ul style="color: rgb(93, 120, 105); margin-left: -25px;">
+                            {% for score in user_scores %}
+                               <li>Score: {{ score.score }}/{{ quiz.questions | length }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <ul style="color: rgb(147, 121, 150);">Not Attempted</ul>
+                        {% endif %}
+                    </td>                                             
+                    <td>
+                        <a href = '/Attempt-Quiz/{{quiz.id}}' ><button>Start</button> </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2025 Quizdom. All rights reserved.
+    </footer>
+</body>
+</html>
