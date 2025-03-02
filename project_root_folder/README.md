@@ -15,21 +15,7 @@ Before running the application, ensure you have the following installed:
 
 ## Installation Steps
 
-### 1. Clone the Repository
-Clone the Quizdom repository to your local machine:
-```bash
-git clone https://github.com/your-username/quizdom.git
-cd quizdom
-```
-
-### 2. Set Up a Virtual Environment (Optional but Recommended)
-Create and activate a virtual environment to isolate the project dependencies:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install Dependencies
+### 1. Install Dependencies
 Install the required Python packages using `pip`:
 ```bash
 pip install -r requirements.txt
@@ -39,14 +25,14 @@ If you don't have a `requirements.txt` file, you can install the dependencies ma
 pip install flask flask-sqlalchemy matplotlib seaborn werkzeug
 ```
 
-### 4. Initialize the Database
+### 2. Initialize the Database
 Run the following command to initialize the SQLite database and create the necessary tables:
 ```bash
 python main.py
 ```
 This will create a `quizdomdata.db` file in your project directory, which contains the database schema and initial data.
 
-### 5. Run the Application
+### 3. Run the Application
 Start the Flask development server:
 ```bash
 python main.py
