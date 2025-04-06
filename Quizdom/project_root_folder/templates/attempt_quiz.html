@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attempt Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Orbitron', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #2C3450; /* Lightened deep blue */
+            color: #E1E7F5; /* Soft white */
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 15px;
+        }
+        
+        .quiz-header {
+            text-align: center;
+            color: #B8CFF5; /* Soft blue */
+            font-size: 1.6em;
+            text-shadow: 0 0 8px #B8CFF5;
+            margin-bottom: 15px;
+        }
+
+        .timer-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #FFC857; /* Warm contrast */
+            text-shadow: 0 0 5px #FFC857;
+        }
+
+        .question {
+            background: rgba(70, 80, 120, 0.7); /* Muted blue */
+            box-shadow: 0 0 10px rgba(173, 216, 230, 0.2);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+
+        .question p {
+            color: #B8CFF5;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            color: #DDE3F0;
+            font-size: 0.9rem;
+            padding: 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+
+        label:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        button {
+            background-color: #B8CFF5;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #222;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #A0BADB;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="quiz-header">Title: {{ quiz.title }}</h1>
+        <p style="text-align: center; font-weight: bold" >Remarks: {{ quiz.remarks }}</p><br> 
+        <div class="timer-container">
+            <div class="timer" id="timer">{{ '%02d' % ((time - 1) // 60) }}:{{ '%02d' % ((time - 1) % 60) }}</div>
+        </div>    
+        <div id="quiz" data-duration="{{ time * 60 | int }}">
+            <form action="/Attempt-Quiz/{{ quiz.id }}" method="POST" id="quiz-form">
+                {% for question in questions %}
+                <div class="question">
+                    <p>{{ question.question_text }}</p>
+                    <label>
+                        <input type="radio" name="question-{{ question.id }}" value="1">
+                        {{ question.option1 }}
+                    </label>
+                    <label>
+                        <input type="radio" name="question-{{ question.id }}" value="2">
+                        {{ question.option2 }}
+                    </label>
+                    <label>
+                        <input type="radio" name="question-{{ question.id }}" value="3">
+                        {{ question.option3 }}
+                    </label>
+                    <label>
+                        <input type="radio" name="question-{{ question.id }}" value="4">
+                        {{ question.option4 }}
+                    </label>
+                </div>
+                {% endfor %}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let quizElement = document.getElementById('quiz');
+        let totalTime = parseInt(quizElement.getAttribute('data-duration'));
+        let timerElement = document.getElementById('timer');
+
+        function pad(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+        function updateTimer() {
+            let minutes = Math.floor(totalTime / 60);
+            let seconds = totalTime % 60;
+
+            timerElement.textContent = pad(minutes) + ':' + pad(seconds);
+
+            if (totalTime > 0) {
+                totalTime--;
+            } else {
+                clearInterval(timer);
+                alert('Time is up!');
+                document.getElementById('quiz-form').submit();
+            }
+        }
+
+        totalTime--;
+        let timer = setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
