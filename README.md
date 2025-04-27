@@ -93,7 +93,7 @@ Quizdom/                           # Root project directory
 │   │       ├── attempts_chart.png  # Chart displaying attempts statistics
 │   │       ├── bar_chart.png       # Bar chart showing quiz score distribution
 │   │       ├── pie_chart.png       # Pie chart for subject-wise quiz attempts breakdown
-│   │       └── top_scores_chart.png# Chart for top scorers
+│   │       └── top_scores_chart.png # Chart for top scorers
 │   ├── templates/                 # Folder for HTML templates (user and admin pages)
 │   ├── README.md                  # Project documentation (setup instructions, features, etc.)
 │   └── main.py                    # Flask application (handles routes, database, and app logic)
