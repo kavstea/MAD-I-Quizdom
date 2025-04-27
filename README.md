@@ -84,10 +84,13 @@ The application will be available at `http://127.0.0.1:5000`.
 ---
 
 ## Project Structure
+
+```
 main.py                # Flask application
-templates/             # Frontend templates 
+templates/             # Frontend templates
 static/                # CSS/JS/charts
 quizdomdata.db         # Database file
+```
 
 ---
 
