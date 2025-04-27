@@ -1,6 +1,6 @@
 ## Project Overview
 
-<div align="center">
+<div>
   <img src="/Quizdom/images/Screenshot 2025-04-27 065356.png" width="30%" alt="Admin Dashboard">
   <img src="/Quizdom/images/Screenshot 2025-04-27 070554.png" width="30%" alt="User Quiz Interface">
   <img src="Quizdom/images/Screenshot 2025-04-27 070450.png" width="30%" alt="User Scores Interface">
