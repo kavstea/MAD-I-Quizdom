@@ -72,12 +72,10 @@ The application will be available at `http://127.0.0.1:5000`.
 | **Admin Features**                                                                                             | **User Features**                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | **Admin Login**: Access the admin dashboard by logging in with the following credentials:                       | **User Registration**: Register a new account by providing your details.                                      |
-| - **Username**: `admin`                                                                                         | **User Login**: Log in with your username/email and password.                                                 |
-| - **Password**: `admin123`                                                                                     | **Attempt Quizzes**: Take quizzes on various subjects and chapters.                                           |
-| **Manage Users**: Block/unblock users, view user details.                                                       | **View Performance**: Check your scores and visualize your performance using charts.                           |
-| **Manage Subjects, Chapters, and Quizzes**: Add, edit, or delete subjects, chapters, and quizzes.              |                                                                                                                |
+| - **Username**: `admin`<br>**Password**: `admin123`                                                             | **User Login**: Log in with your username/email and password.                                                 |
+| **Manage Users**: Block/unblock users, view user details.                                                       | **Attempt Quizzes**: Take quizzes on various subjects and chapters.                                           |
+| **Manage Subjects, Chapters, and Quizzes**: Add, edit, or delete subjects, chapters, and quizzes.              | **View Performance**: Check your scores and visualize your performance using charts.                           |
 | **View Summary**: Visualize quiz performance using bar charts and pie charts.                                  |                                                                                                                |
-
 
 ---
 
