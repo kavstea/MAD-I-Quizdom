@@ -84,20 +84,20 @@ The application will be available at `http://127.0.0.1:5000`.
 
 ```
 Quizdom/                           # Root project directory
-├── images/                        # Folder for app images 
+├── images/                        # Folder for app images
 ├── root_folder/                   # Main folder containing app-specific files
 │   ├── instance/                  # Folder for instance-specific files like the database
-│   │   └── quizdomdata.db         # SQLite database file (stores user data, quiz results, etc.)
-│   └── static/                    # Static files for frontend (CSS, JS, charts)
-│       └── charts/                # Folder for saved/generated chart images
-│           ├── attempts_chart.png  # Chart displaying attempts statistics
-│           ├── bar_chart.png      # Bar chart showing quiz score distribution
-│           ├── pie_chart.png      # Pie chart for subject wise quiz attempts breakdown
-│           └── top_scores_chart.png # Chart for top scorers
-├── templates/                     # Folder for HTML templates (views for user and admin pages)
-├── README.md                      # Project documentation (setup instructions, features, etc.)
-├── main.py                        # Flask application (handles routes, database, and app logic)
-└── report.pdf                     # Project report (describes the project and its implementation)
+│   │   └── quizdomdata.db          # SQLite database file (stores user data, quiz results, etc.)
+│   ├── static/                    # Static files for frontend (CSS, JS, charts)
+│   │   └── charts/                # Folder for saved/generated chart images
+│   │       ├── attempts_chart.png  # Chart displaying attempts statistics
+│   │       ├── bar_chart.png       # Bar chart showing quiz score distribution
+│   │       ├── pie_chart.png       # Pie chart for subject-wise quiz attempts breakdown
+│   │       └── top_scores_chart.png# Chart for top scorers
+│   ├── templates/                 # Folder for HTML templates (user and admin pages)
+│   ├── README.md                  # Project documentation (setup instructions, features, etc.)
+│   └── main.py                    # Flask application (handles routes, database, and app logic)
+├── report.pdf                     # Project report (overview and implementation details)
 
 ```
 
