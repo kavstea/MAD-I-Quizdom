@@ -1,17 +1,41 @@
-# Project Overview
+## Project Overview
 
 Quizdom acts as a web application designed to help users prepare for exams by taking quizzes on various subjects. Admins can manage users, subjects, chapters, and quizzes, while users can register, log in, attempt quizzes, and view their performance through visual summaries.
 
+<div align="center">
+  <img src="/Quizdom/images/Screenshot 2025-04-27 065356.png" width="30%" alt="Admin Dashboard">
+  <img src="/Quizdom/images/Screenshot 2025-04-27 070554.png" width="30%" alt="User Quiz Interface">
+  <img src="Quizdom/images/Screenshot 2025-04-27 070450.png" width="30%" alt="User Scores Interface">
+</div>
+
+---
+
 ## Technologies Used
-- **Backend**: Flask, Flask-SQLAlchemy, Werkzeug Security
-- **Frontend**: HTML, CSS, Bootstrap, Jinja2
-- **Database**: SQLite
-- **Data Visualization**: Matplotlib, Seaborn
+
+### Backend
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-000000?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![Werkzeug](https://img.shields.io/badge/Werkzeug-000000?style=for-the-badge&logo=werkzeug&logoColor=white)
+
+### Frontend
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+### Data Visualization
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-0C7BDC?style=for-the-badge)
+
+---
 
 ## Prerequisites
+
 Before running the application, ensure you have the following installed:
-- **Python 3.7 or higher**
-- **pip** (Python package manager)
+
+- Python 3.7 or higher
+- pip (Python package manager)
+
+---
 
 ## Installation Steps
 
@@ -60,11 +84,12 @@ The application will be available at `http://127.0.0.1:5000`.
 ---
 
 ## Project Structure
-- **`main.py`**: The main Flask application file containing routes, database models, and logic.
-- **`templates/`**: Contains HTML templates for rendering the frontend.
-- **`static/`**: Stores static files like CSS, JavaScript, and generated charts.
-- **`quizdomdata.db`**: SQLite database file (created after running the application).
-- **`README.md`**: This file, providing instructions for setting up and running the application.
+quizdom/
+├── main.py                # Main application file
+├── templates/             # HTML templates
+├── static/                # CSS, JS, and generated charts
+├── quizdomdata.db         # Database file
+└── README.md              # This file
 
 ---
 
