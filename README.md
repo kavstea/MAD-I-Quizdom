@@ -1,7 +1,7 @@
 ## Project Overview
 
 <div>
-  <img src="/Quizdom/images/Screenshot 2025-04-27 065356.png" width="40%" height='65px' alt="Admin Dashboard">
+  <img src="/Quizdom/images/Screenshot 2025-04-27 065356.png" width="39%" height='65px' alt="Admin Dashboard">
   <img src="/Quizdom/images/Screenshot 2025-04-27 070554.png" width="29%" height='65px' alt="User Quiz Interface">
   <img src="Quizdom/images/Screenshot 2025-04-27 070450.png" width="29%" height='65px' alt="User Scores Interface">
 </div>
