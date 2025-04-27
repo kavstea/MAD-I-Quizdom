@@ -84,12 +84,10 @@ The application will be available at `http://127.0.0.1:5000`.
 ---
 
 ## Project Structure
-quizdom/
-├── main.py                # Main application file
-├── templates/             # HTML templates
-├── static/                # CSS, JS, and generated charts
-├── quizdomdata.db         # Database file
-└── README.md              # This file
+main.py                # Flask application
+templates/             # Frontend templates 
+static/                # CSS/JS/charts
+quizdomdata.db         # Database file
 
 ---
 
