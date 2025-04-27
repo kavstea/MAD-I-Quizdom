@@ -113,5 +113,5 @@ Quizdom/                           # Root project directory
 ---
 
 <div align="center">
-  <em>Thankyou!</em>
+  <em>---x---</em>
 </div>  
