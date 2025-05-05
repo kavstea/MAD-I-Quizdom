@@ -6,7 +6,7 @@
   <img src="/Quizdom/images/Screenshot 2025-04-27 070554.png" width="25%" height='65px' alt="User Quiz Interface">
 </div>
 
-
+**Grade: S;**
 Quizdom acts as a web application designed to help users prepare for exams by taking quizzes on various subjects. Admins can manage users, subjects, chapters, and quizzes, while users can register, log in, attempt quizzes, and view their performance through visual summaries.
 
 ---
