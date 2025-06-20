@@ -1,12 +1,5 @@
 ## Project Overview
 
-<div>
-  <img src="/Quizdom/images/Screenshot 2025-04-27 065356.png" width="47%" height='65px' alt="Admin Dashboard">
-  <img src="Quizdom/images/Screenshot 2025-04-27 070450.png" width="25%" height='65px' alt="User Scores Interface">
-  <img src="/Quizdom/images/Screenshot 2025-04-27 070554.png" width="25%" height='65px' alt="User Quiz Interface">
-</div>
-
-
 Quizdom acts as a web application designed to help users prepare for exams by taking quizzes on various subjects. Admins can manage users, subjects, chapters, and quizzes, while users can attempt quizzes and view their performance through visual summaries.
 
 **Grade: S**
