@@ -2,8 +2,6 @@
 
 Quizdom acts as a web application designed to help users prepare for exams by taking quizzes on various subjects. Admins can manage users and quiz content while users can attempt quizzes and view their performance through visual summaries.
 
-**Grade: S**
-
 **[Live Link for Demo/Testing](https://quizdom-4zj9.onrender.com/)** 
 
 (For best display on mobile: desktop view + landscape mode)
