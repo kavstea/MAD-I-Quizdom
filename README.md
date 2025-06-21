@@ -6,7 +6,7 @@ Quizdom acts as a web application designed to help users prepare for exams by ta
 
 **Live Link: [Quizdom](https://quizdom-df5c.onrender.com/)** 
 
-(For best experience on mobile: desktop view + landscape mode.)
+(For best display on mobile: desktop view + landscape mode.)
 
 ---
 
